@@ -117,13 +117,11 @@ class Product extends Controller
                 $image->move(public_path('images'), $imageName);
                 $product->image = $imageName;
             }
-
             if($request->discount){
                 $product->discount = $request->discount;
             }
-     
             if ($product->save()) {
-              return response()->json(['message' => 'Product updated successfully'], 200);
+            return response()->json(['message' => 'Product updated successfully'], 200);
         } else {
         return response()->json(['message' => 'Failed to update the product'], 500);
     }
